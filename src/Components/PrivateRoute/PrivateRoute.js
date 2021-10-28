@@ -7,7 +7,7 @@ const PrivateRoute = ({ children, ...rest }) => {
   if(isLoading){
     return (
       <div className="flex justify-center">
-        <div className="w-16 h-16 border-4 border-green-500 border-dashed rounded-full animate-spin dark:border-violet-400"></div>
+        <div className="w-16 h-16 border-4 border-indigo-500 border-dashed rounded-full animate-spin dark:border-violet-400"></div>
       </div>
     );
   }

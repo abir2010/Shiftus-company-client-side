@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import useServices from "../../Hooks/useServices";
 import bannerImg from "../../images/banner_images/undraw_deliveries_131a.png";
+import SingleService from "../SingleService/SingleService";
 import "./Home.css";
 
 const Home = () => {
+  const {services,load} = useServices();
   return (
     <div className="banner">
       {/* banner-part */}
@@ -46,6 +49,32 @@ const Home = () => {
           </div>
         </div>
       </section>
+      {load ? (
+        <div className="flex justify-center">
+          <div className="w-16 h-16 border-4 border-indigo-500 border-dashed rounded-full animate-spin dark:border-violet-400"></div>
+        </div>
+      ) : (
+        <div>
+          <section className="py-6 sm:py-12 dark:bg-coolGray-800 dark:text-coolGray-100">
+            <div className="container p-6 mx-auto space-y-8">
+              <div className="space-y-2 text-center">
+                <p className="text-indigo-500 font-bold text-md dark:text-coolGray-400">
+                Real Solutions, Real Fast!
+                </p>
+                <h2 className="text-4xl font-bold">Best Global Logistics Solutions.</h2>
+              </div>
+              <div className="grid grid-cols-1 gap-x-8 gap-y-8 md:grid-cols-2 lg:grid-cols-3">
+                {
+                  services.map(service=><SingleService
+                    key={service._id}
+                    service={service}>
+                  </SingleService>)
+                }
+              </div>
+            </div>
+          </section>
+        </div>
+      )}
     </div>
   );
 };

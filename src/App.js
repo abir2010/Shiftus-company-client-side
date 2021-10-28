@@ -5,6 +5,7 @@ import Header from "./Components/Header/Header";
 import Home from "./Components/Home/Home";
 import Login from "./Components/Login/Login";
 import MyBookings from "./Components/MyBookings/MyBookings";
+import PlaceOrder from "./Components/PlaceOrder/PlaceOrder";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 import AuthProvider from "./Contexts/AuthProvider";
 
@@ -21,6 +22,9 @@ function App() {
             <Route path="/home">
               <Home></Home>
             </Route>
+            <PrivateRoute path="/placeOrder/:_id">
+              <PlaceOrder></PlaceOrder>
+            </PrivateRoute>
             <PrivateRoute path="/myBookings">
               <MyBookings></MyBookings>
             </PrivateRoute>
