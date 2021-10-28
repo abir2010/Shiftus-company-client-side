@@ -1,0 +1,15 @@
+.header-navs li:hover {
+    background-color: rgb(84, 104, 252);
+    color: white;
+    margin: 10px 0;
+    border-radius: 5px;
+    transform: scale(1.04);
+    box-shadow: 3px 5px 20px rgb(190, 190, 190);
+    transition: transform 200ms ease-in-out;
+  }
+  #login-btn:hover {
+      background-color: rgb(84, 104, 252);
+      transform: scale(1.1);
+      box-shadow: 3px 3px 20px rgb(190, 190, 190);
+      transition: transform 200ms ease-in-out;
+  }
