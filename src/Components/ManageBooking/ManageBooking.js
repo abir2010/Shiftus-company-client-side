@@ -1,5 +1,5 @@
 import React from "react";
-import deleteIcon from "../../images/icons/icons8-delete-bin.gif";
+import deleteIcon from "../../images/icons/icons8-cross-mark-button-48.png";
 
 const ManageBooking = (props) => {
   const { booking, handleDeleteBooking, handleStatusUpdate } = props;
@@ -63,11 +63,12 @@ const ManageBooking = (props) => {
                   whitespace-nowrap
                   text-right text-sm
                   font-medium
+                  lg:flex
                 "
       >
         <button
           onClick={() => handleStatusUpdate(booking?._id)}
-          class="text-indigo-600 hover:text-indigo-900"
+          class="text-indigo-600 font-bold hover:text-indigo-900"
         >
           Approve
         </button>
@@ -76,7 +77,7 @@ const ManageBooking = (props) => {
           href="/"
           class="text-indigo-600 ml-2 hover:text-indigo-900"
         >
-          <img width="20px" src={deleteIcon} alt="" />
+          <img width="30px" src={deleteIcon} alt="" />
         </button>
       </td>
     </tr>
