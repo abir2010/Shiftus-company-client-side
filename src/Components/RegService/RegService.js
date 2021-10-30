@@ -2,16 +2,17 @@ import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router";
 
 const RegService = (props) => {
-  const { _id, serviceName, email, serviceImg, deliveryTo } = props.service;
-  const {func} = props;
+  const { _id, serviceName, email, serviceImg, deliveryTo, status } =
+    props.service;
+  const { func } = props;
   const [bookings, setBookings] = useState([]);
   const history = useHistory();
-  useEffect(()=>{
+  useEffect(() => {
     fetch(`http://localhost:5000/regService/${email}`)
-        .then(res=>res.json())
-        .then(data=>setBookings(data))
-  },[]);
-  
+      .then((res) => res.json())
+      .then((data) => setBookings(data));
+  }, []);
+
   return (
     <li className="flex flex-col py-6 font-bold sm:flex-row sm:justify-between">
       <div className="flex w-full space-x-2 sm:space-x-4">
@@ -24,14 +25,41 @@ const RegService = (props) => {
           <div className="flex justify-between w-full pb-2 space-x-2">
             <div className="space-y-1">
               <h3 className="text-lg font-semibold leading-snug sm:pr-8">
-                {serviceName}
+                {serviceName}{" "}
+                <span
+                  class={
+                    status == "pending"
+                      ? `
+                          px-2
+                          inline-flex
+                          text-xs
+                          leading-5
+                          font-semibold
+                          rounded-full
+                          bg-red-100
+                          text-red-600
+                          `
+                      : `
+                          px-2
+                          inline-flex
+                          text-xs
+                          leading-5
+                          font-semibold
+                          rounded-full
+                          bg-green-100
+                          text-green-600
+                          `
+                  }
+                >
+                  {status}
+                </span>
               </h3>
               <p className="text-sm dark:text-coolGray-400">{deliveryTo}</p>
             </div>
           </div>
           <div className="flex text-sm divide-x">
             <button
-              onClick={()=>func(_id)}
+              onClick={() => func(_id)}
               type="button"
               className="flex items-center px-2 py-1 pl-0 space-x-1"
             >

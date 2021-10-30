@@ -167,23 +167,35 @@ const Header = () => {
         >
           Home
         </NavLink>
+        {user.email ? (
+          <>
+            <NavLink
+              to="/myBookings"
+              className="block px-4 py-2 text-sm font-bold hover:bg-gray-200"
+            >
+              My Bookings
+            </NavLink>
+            <NavLink
+              to="/allBookings"
+              className="block px-4 py-2 text-sm font-bold hover:bg-gray-200"
+            >
+              Manage Bookings
+            </NavLink>
+            <NavLink
+              to="/addBooking"
+              className="block px-4 py-2 text-sm font-bold hover:bg-gray-200"
+            >
+              Add new service
+            </NavLink>
+          </>
+        ) : (
+          <></>
+        )}
         <NavLink
-          to="/myBookings"
+          to="/about"
           className="block px-4 py-2 text-sm font-bold hover:bg-gray-200"
         >
-          My Bookings
-        </NavLink>
-        <NavLink
-          to="/allBookings"
-          className="block px-4 py-2 text-sm font-bold hover:bg-gray-200"
-        >
-          Manage Bookings
-        </NavLink>
-        <NavLink
-          to="/addBooking"
-          className="block px-4 py-2 text-sm font-bold hover:bg-gray-200"
-        >
-          Add new service
+          About
         </NavLink>
         <NavLink
           to="/contact"

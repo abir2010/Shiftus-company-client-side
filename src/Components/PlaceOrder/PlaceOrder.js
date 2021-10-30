@@ -21,6 +21,7 @@ const PlaceOrder = () => {
       deliveryTo: cityRef.current.value,
       serviceName: service?.title,
       serviceImg: service?.img,
+      status: "pending",
     };
     // console.log(regService);
     fetch("http://localhost:5000/regService", {

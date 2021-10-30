@@ -1,8 +1,8 @@
-import React from "react";
-import deleteIcon from '../../images/icons/icons8-delete-bin.gif';
+import React, { useEffect, useState } from "react";
+import deleteIcon from "../../images/icons/icons8-delete-bin.gif";
 
 const ManageBooking = (props) => {
-  const { booking,handleDeleteBooking } = props;
+  const { booking, handleDeleteBooking, handleStatusUpdate } = props;
   return (
     <tr>
       <td class="px-6 py-4 whitespace-nowrap">
@@ -26,18 +26,31 @@ const ManageBooking = (props) => {
       </td>
       <td class="px-6 py-4 whitespace-nowrap">
         <span
-          class="
-                    px-2
-                    inline-flex
-                    text-xs
-                    leading-5
-                    font-semibold
-                    rounded-full
-                    bg-green-100
-                    text-green-800
-                  "
+          className={
+            booking?.status == "pending"
+              ? `
+                  px-2
+                  inline-flex
+                  text-xs
+                  leading-5
+                  font-semibold
+                  rounded-full
+                  bg-red-100
+                  text-red-600
+                  `
+              : `
+                  px-2
+                  inline-flex
+                  text-xs
+                  leading-5
+                  font-semibold
+                  rounded-full
+                  bg-green-100
+                  text-green-600
+                  `
+          }
         >
-          Active
+          {booking?.status}
         </span>
       </td>
       <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
@@ -50,13 +63,19 @@ const ManageBooking = (props) => {
                   whitespace-nowrap
                   text-right text-sm
                   font-medium
-                  
                 "
       >
-        <button href="/" class="text-indigo-600 hover:text-indigo-900">
+        <button
+          onClick={() => handleStatusUpdate(booking?._id)}
+          class="text-indigo-600 hover:text-indigo-900"
+        >
           Approve
         </button>
-        <button onClick={()=>handleDeleteBooking(booking?._id)} href="/" class="text-indigo-600 ml-2 hover:text-indigo-900">
+        <button
+          onClick={() => handleDeleteBooking(booking?._id)}
+          href="/"
+          class="text-indigo-600 ml-2 hover:text-indigo-900"
+        >
           <img width="20px" src={deleteIcon} alt="" />
         </button>
       </td>
