@@ -41,23 +41,23 @@ const ManageBookings = () => {
   };
   return (
     <div>
-      <div class="flex flex-col text-left font-bold my-12 mx-4 lg:py-12">
-        <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-          <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+      <div className="flex flex-col text-left font-bold my-12 mx-4 lg:py-12">
+        <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+          <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
             <div
-              class="
+              className="
           shadow
           overflow-hidden
           border-b border-gray-200
           sm:rounded-lg
         "
             >
-              <table class="min-w-full divide-y divide-gray-200">
-                <thead class="bg-gray-50">
+              <table className="min-w-full divide-y divide-gray-200">
+                <thead className="bg-gray-50">
                   <tr>
                     <th
                       scope="col"
-                      class="
+                      className="
                   px-6
                   py-3
                   text-left text-sm
@@ -71,7 +71,7 @@ const ManageBookings = () => {
                     </th>
                     <th
                       scope="col"
-                      class="
+                      className="
                   px-6
                   py-3
                   text-left text-sm
@@ -85,7 +85,7 @@ const ManageBookings = () => {
                     </th>
                     <th
                       scope="col"
-                      class="
+                      className="
                   px-6
                   py-3
                   text-left text-sm
@@ -99,7 +99,7 @@ const ManageBookings = () => {
                     </th>
                     <th
                       scope="col"
-                      class="
+                      className="
                   px-6
                   py-3
                   text-left text-sm
@@ -111,12 +111,12 @@ const ManageBookings = () => {
                     >
                       Delivery date
                     </th>
-                    <th scope="col" class="relative px-6 py-3">
-                      <span class="sr-only">Edit</span>
+                    <th scope="col" className="relative px-6 py-3">
+                      <span className="sr-only">Edit</span>
                     </th>
                   </tr>
                 </thead>
-                <tbody class="bg-white divide-y divide-gray-200">
+                <tbody className="bg-white divide-y divide-gray-200">
                   {allBookings.map((booking) => (
                     <ManageBooking
                       key={booking._id}

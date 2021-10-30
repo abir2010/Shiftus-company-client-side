@@ -5,26 +5,19 @@ const ManageBooking = (props) => {
   const { booking, handleDeleteBooking, handleStatusUpdate } = props;
   return (
     <tr>
-      <td class="px-6 py-4 whitespace-nowrap">
-        <div class="flex items-center">
-          {/* <div class="flex-shrink-0 h-10 w-10">
-            <img
-              class="h-10 w-10 rounded-full"
-              src={booking?.photoUrl}
-              alt=""
-            />
-          </div> */}
-          <div class="ml-4">
-            <div class="text-sm font-medium text-gray-900">{booking?.name}</div>
-            <div class="text-sm text-gray-500">{booking?.email}</div>
+      <td className="px-6 py-4 whitespace-nowrap">
+        <div className="flex items-center">
+          <div className="ml-4">
+            <div className="text-sm font-medium text-gray-900">{booking?.name}</div>
+            <div className="text-sm text-gray-500">{booking?.email}</div>
           </div>
         </div>
       </td>
-      <td class="px-6 py-4 whitespace-nowrap">
-        <div class="text-sm text-gray-900">{booking?.serviceName}</div>
-        <div class="text-sm text-gray-500">{booking?.deliveryTo}</div>
+      <td className="px-6 py-4 whitespace-nowrap">
+        <div className="text-sm text-gray-900">{booking?.serviceName}</div>
+        <div className="text-sm text-gray-500">{booking?.deliveryTo}</div>
       </td>
-      <td class="px-6 py-4 whitespace-nowrap">
+      <td className="px-6 py-4 whitespace-nowrap">
         <span
           className={
             booking?.status == "pending"
@@ -53,11 +46,11 @@ const ManageBooking = (props) => {
           {booking?.status}
         </span>
       </td>
-      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
         {booking?.date}
       </td>
       <td
-        class="
+        className="
                   px-6
                   py-4
                   whitespace-nowrap
@@ -68,14 +61,14 @@ const ManageBooking = (props) => {
       >
         <button
           onClick={() => handleStatusUpdate(booking?._id)}
-          class="text-indigo-600 font-bold hover:text-indigo-900"
+          className="text-indigo-600 font-bold hover:text-indigo-900"
         >
           Approve
         </button>
         <button
           onClick={() => handleDeleteBooking(booking?._id)}
           href="/"
-          class="text-indigo-600 ml-2 hover:text-indigo-900"
+          className="text-indigo-600 ml-2 hover:text-indigo-900"
         >
           <img width="30px" src={deleteIcon} alt="" />
         </button>

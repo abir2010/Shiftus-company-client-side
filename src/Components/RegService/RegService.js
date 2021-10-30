@@ -19,7 +19,7 @@ const RegService = (props) => {
               <h3 className="text-lg font-semibold leading-snug sm:pr-8">
                 {serviceName}{" "}
                 <span
-                  class={
+                  className={
                     status == "pending"
                       ? `
                           px-2
