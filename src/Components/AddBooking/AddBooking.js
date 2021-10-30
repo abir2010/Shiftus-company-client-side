@@ -35,7 +35,7 @@ const AddBooking = () => {
     <div>
       <form
         onSubmit={handleAddService}
-        className="lg:m-4 border border-gray-300 rounded-md text-center"
+        className="lg:m-4 lg:my-20 border border-gray-300 rounded-md text-center"
       >
         <p className="lg:text-2xl bg-indigo-200 py-2 font-bold mt-12 mb-8">
           Fill-up & submit the form to Add a new Service

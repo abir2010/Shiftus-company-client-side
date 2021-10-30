@@ -52,7 +52,7 @@ const Header = () => {
                     to="/allBookings"
                     className="flex items-center px-3 -mb-1"
                   >
-                    Manage All Bookings
+                    Manage Bookings
                   </NavLink>
                 </li>
                 <li className="flex">
@@ -60,13 +60,18 @@ const Header = () => {
                     to="/addBooking"
                     className="flex items-center px-3 -mb-1"
                   >
-                    Add a new service
+                    Add new service
                   </NavLink>
                 </li>
               </>
             ) : (
               <></>
             )}
+            <li className="flex">
+              <NavLink to="/about" className="flex items-center px-3 -mb-1">
+                About
+              </NavLink>
+            </li>
             <li className="flex">
               <NavLink to="/contact" className="flex items-center px-3 -mb-1">
                 Contact
@@ -172,13 +177,13 @@ const Header = () => {
           to="/allBookings"
           className="block px-4 py-2 text-sm font-bold hover:bg-gray-200"
         >
-          Manage All Bookings
+          Manage Bookings
         </NavLink>
         <NavLink
           to="/addBooking"
           className="block px-4 py-2 text-sm font-bold hover:bg-gray-200"
         >
-          Add a new service
+          Add new service
         </NavLink>
         <NavLink
           to="/contact"

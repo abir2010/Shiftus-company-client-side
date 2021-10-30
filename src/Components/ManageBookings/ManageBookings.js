@@ -26,7 +26,7 @@ const ManageBookings = () => {
   }
   return (
     <div>
-      <div class="flex flex-col text-left font-bold my-12 mx-4">
+      <div class="flex flex-col text-left font-bold my-12 mx-4 lg:py-12">
         <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
           <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
             <div
