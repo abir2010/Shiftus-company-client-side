@@ -8,14 +8,14 @@ const MyBookings = () => {
   const {user} = useAuth();
   const history = useHistory();
   useEffect(() => {
-    fetch(`http://localhost:5000/regService/${user.email}`)
+    fetch(`https://boiling-waters-95474.herokuapp.com/regService/${user.email}`)
       .then((res) => res.json())
       .then((data) => setRegServices(data));
   }, []);
   const handleRemoveBTN = (id) => {
     const found = window.confirm("Are you sure, you want to delete ?");
     if (found) {
-      fetch(`http://localhost:5000/myBookings/${id}`, {
+      fetch(`https://boiling-waters-95474.herokuapp.com/myBookings/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

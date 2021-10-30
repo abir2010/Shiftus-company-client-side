@@ -24,7 +24,7 @@ const PlaceOrder = () => {
       status: "pending",
     };
     // console.log(regService);
-    fetch("http://localhost:5000/regService", {
+    fetch("https://boiling-waters-95474.herokuapp.com/regService", {
       method: "POST",
       headers: {
         "content-type": "application/json",

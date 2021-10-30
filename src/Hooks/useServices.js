@@ -5,7 +5,7 @@ const useServices = () => {
   
   const [load, setLoad] = useState(true);
   useEffect(() => {
-    fetch("http://localhost:5000/services")
+    fetch("https://boiling-waters-95474.herokuapp.com/services")
       .then((res) => res.json())
       .then((data) => {
         setLoad(false);

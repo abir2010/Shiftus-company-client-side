@@ -4,14 +4,14 @@ import ManageBooking from "../ManageBooking/ManageBooking";
 const ManageBookings = () => {
   const [allBookings, setAllBookings] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/regServices")
+    fetch("https://boiling-waters-95474.herokuapp.com/regServices")
       .then((res) => res.json())
       .then((data) => setAllBookings(data));
   }, []);
   const handleDeleteBooking = (id) => {
     const found = window.confirm("Are you sure, you want to delete ?");
     if (found) {
-      fetch(`http://localhost:5000/regServices/${id}`, {
+      fetch(`https://boiling-waters-95474.herokuapp.com/regServices/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -26,7 +26,7 @@ const ManageBookings = () => {
   };
   let uiStatus = "pending";
   const handleStatusUpdate = (id) => {
-    fetch(`http://localhost:5000/regServices/${id}`, {
+    fetch(`https://boiling-waters-95474.herokuapp.com/regServices/${id}`, {
       method: "PUT",
     })
       .then((res) => res.json())
