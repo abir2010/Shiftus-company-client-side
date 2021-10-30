@@ -3,6 +3,7 @@ import { useHistory } from "react-router";
 
 const RegService = (props) => {
   const { _id, serviceName, email, serviceImg, deliveryTo } = props.service;
+  const {func} = props;
   const [bookings, setBookings] = useState([]);
   const history = useHistory();
   useEffect(()=>{
@@ -10,24 +11,7 @@ const RegService = (props) => {
         .then(res=>res.json())
         .then(data=>setBookings(data))
   },[]);
-  const handleRemoveBTN = (id) => {
-    const found = window.confirm("Are you sure, you want to delete ?");
-    if (found) {
-      fetch(`http://localhost:5000/myBookings/${id}`, {
-        method: "DELETE",
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.deletedCount > 0) {
-            alert("Remove success !");
-            // const found = bookings.filter(booking=>booking._id!=id)
-            if(alert){
-                history.push("/myBookings");
-            }
-          }
-        });
-    }
-  };
+  
   return (
     <li className="flex flex-col py-6 font-bold sm:flex-row sm:justify-between">
       <div className="flex w-full space-x-2 sm:space-x-4">
@@ -47,7 +31,7 @@ const RegService = (props) => {
           </div>
           <div className="flex text-sm divide-x">
             <button
-              onClick={()=>handleRemoveBTN(_id)}
+              onClick={()=>func(_id)}
               type="button"
               className="flex items-center px-2 py-1 pl-0 space-x-1"
             >

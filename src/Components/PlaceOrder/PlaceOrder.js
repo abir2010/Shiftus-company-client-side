@@ -34,79 +34,96 @@ const PlaceOrder = () => {
       .then((data) => {
         if (data.insertedId) {
           alert("You just booked this service !\n Thank you !");
-          if(alert){
-            history.push("/home");
+          if (alert) {
+            history.push("/myBookings");
           }
         }
       });
-    
+
     e.preventDefault();
   };
   return (
     <div>
-      <form
-        onSubmit={handleReg}
-        className="my-11 mx-96 border border-gray-300 rounded-md text-center"
-        style={{
-          backgroundImage: `url(
-            ${service?.img})`,
-          backgroundPosition: "center center",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-        }}
-      >
-        <p className="text-2xl bg-indigo-200 py-2 font-bold mt-12 mb-8">
-          Fill-up & submit the form to Book this Service
+      <div className="lg:m-4 lg:mx-72 border border-gray-300 rounded-md text-center">
+        <p className="text-xl lg:text-2xl bg-indigo-200 py-2 font-bold mt-12">
+          {service?.title}
         </p>
-        <input
-          type="text"
-          className="border-b p-2 mb-4 border-gray-400 w-72 font-bold"
-          value={user.displayName}
-        />{" "}
-        <br />
-        <input
-          type="text"
-          className="border-b p-2 mb-4 border-gray-400 w-72 font-bold"
-          value={user.email}
-        />{" "}
-        <br />
-        <input
-          ref={dateRef}
-          type="text"
-          className="border-b p-2 mb-4 border-gray-400 w-72 font-bold"
-          placeholder="Date"
-          required
-        />{" "}
-        <br />
-        <input
-          ref={phoneRef}
-          type="text"
-          className="border-b p-2 mb-4 border-gray-400 w-72 font-bold"
-          placeholder="Phone"
-          required
-        />{" "}
-        <br />
-        <input
-          ref={cityRef}
-          type="text"
-          className="border-b p-2 mb-4 border-gray-400 w-72 font-bold"
-          placeholder="Delivery city"
-          required
-        />{" "}
-        <br />
-        <input
-          type="text"
-          className="border-b p-2 border-gray-400 w-72 font-bold"
-          value={service?.title}
-        />
-        <div className="flex justify-center">
+        <p className="text-md bg-indigo-200 py-2 font-bold mb-12">
+          {service?.des}
+        </p>
+        <form
+          onSubmit={handleReg}
+          className="lg:m-4 border border-gray-300 rounded-md text-center"
+          style={{
+            backgroundImage: `url(
+            ${service?.img})`,
+            backgroundPosition: "center center",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+          }}
+        >
+          <p className="lg:text-2xl bg-indigo-200 py-2 font-bold mt-12 mb-8">
+            Fill-up & submit the form to Book this Service
+          </p>
           <input
-            type="submit"
-            className="border font-bold bg-indigo-400 border-indigo-500 px-24 py-2 mt-8 mb-12 text-center flex  items-center hover:bg-green-400"
-            value="Registration"
+            type="text"
+            className="border-b p-2 mb-4 border-gray-400 lg:w-72 font-bold"
+            value={user.displayName}
+          />{" "}
+          <br />
+          <input
+            type="text"
+            className="border-b p-2 mb-4 border-gray-400 lg:w-72 font-bold"
+            value={user.email}
+          />{" "}
+          <br />
+          <input
+            ref={dateRef}
+            type="text"
+            className="border-b p-2 mb-4 border-gray-400 lg:w-72 font-bold"
+            placeholder="Date"
+            required
+          />{" "}
+          <br />
+          <input
+            ref={phoneRef}
+            type="text"
+            className="border-b p-2 mb-4 border-gray-400 lg:w-72 font-bold"
+            placeholder="Phone"
+            required
+          />{" "}
+          <br />
+          <input
+            ref={cityRef}
+            type="text"
+            className="border-b p-2 mb-4 border-gray-400 lg:w-72 font-bold"
+            placeholder="Delivery city"
+            required
+          />{" "}
+          <br />
+          <input
+            type="text"
+            className="border-b p-2 border-gray-400 lg:w-72 font-bold"
+            value={service?.title}
           />
-        </div>
-      </form>
+          <div className="flex justify-center">
+            <input
+              type="submit"
+              className="border font-bold bg-indigo-400 border-indigo-500 px-24 py-2 mt-8 mb-12 text-center flex  items-center hover:bg-green-400"
+              value="Registration"
+            />
+          </div>
+          <div className="flex justify-center space-x-4">
+            <button
+              onClick={() => history.push("/home")}
+              type="button"
+              className="px-6 py-2 bg-white font-bold border rounded-md dark:border-violet-400"
+            >
+              Go back
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };

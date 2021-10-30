@@ -14,7 +14,7 @@ const Login = () => {
   };
   return (
     <div>
-      <div className="my-32 font-bold mx-96 border border-gray-300 rounded-md text-center">
+      <div className="my-24 lg:my-32 font-bold lg:mx-96 border border-gray-300 rounded-md text-center">
         <p className="text-2xl font-bold mt-12 mb-4">Login with</p>
         <div className="flex justify-center">
           <button
