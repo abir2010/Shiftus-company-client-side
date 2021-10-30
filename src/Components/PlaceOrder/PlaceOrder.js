@@ -80,7 +80,7 @@ const PlaceOrder = () => {
           <br />
           <input
             ref={dateRef}
-            type="text"
+            type="date"
             className="border-b p-2 mb-4 border-gray-400 lg:w-72 font-bold"
             placeholder="Date"
             required
@@ -98,7 +98,7 @@ const PlaceOrder = () => {
             ref={cityRef}
             type="text"
             className="border-b p-2 mb-4 border-gray-400 lg:w-72 font-bold"
-            placeholder="Delivery city"
+            placeholder="Delivery Address"
             required
           />{" "}
           <br />
