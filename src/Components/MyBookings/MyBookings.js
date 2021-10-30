@@ -30,7 +30,7 @@ const MyBookings = () => {
     }
   };
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center lg:my-24">
       <div className="flex flex-col max-w-3xl p-6 space-y-4 sm:p-10 dark:bg-coolGray-900 dark:text-coolGray-100">
         <h2 className="text-xl bg-indigo-200 font-semibold">Your booked services</h2>
         <ul className="flex flex-col divide-y divide-coolGray-700">

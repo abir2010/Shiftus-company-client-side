@@ -3,7 +3,6 @@ import ManageBooking from "../ManageBooking/ManageBooking";
 
 const ManageBookings = () => {
   const [allBookings, setAllBookings] = useState([]);
-  const [updatedServices, setUpdatedServices] = useState([]);
   useEffect(() => {
     fetch("http://localhost:5000/regServices")
       .then((res) => res.json())

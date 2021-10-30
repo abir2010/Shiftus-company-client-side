@@ -1,6 +1,14 @@
-# Getting Started with Create React App
+### `Shiftus Company Website`
+Shiftus is a delivery service provider company around the world.One can access all the service from this website of that company.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project live site link : [Click here to visit]().
+
+### `All about this project`
+* This full-stack website project is created with React, firebase, react router, node, express, mongodb etc.
+* This project is built for a international company named shiftus.This company delivers every kinds of product for their customers.
+* This Delivery Company website has all the features you need.Like AIR FREIGHT SERVICES,ROAD FREIGHT SERVICES,CARGO SHIPPING SERVICES,CITY VAN SERVICE and many more.
+* One user can login with his mail account and add any service as his need and can remove also in any case.
+* If an user is logged out he/she can not able to get his service and can not get information of his bookings.
 
 ## Available Scripts
 

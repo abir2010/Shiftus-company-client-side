@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import deleteIcon from "../../images/icons/icons8-delete-bin.gif";
 
 const ManageBooking = (props) => {

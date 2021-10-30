@@ -1,17 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router";
+import React from "react";
 
 const RegService = (props) => {
-  const { _id, serviceName, email, serviceImg, deliveryTo, status } =
+  const { _id, serviceName, serviceImg, deliveryTo, status } =
     props.service;
   const { func } = props;
-  const [bookings, setBookings] = useState([]);
-  const history = useHistory();
-  useEffect(() => {
-    fetch(`http://localhost:5000/regService/${email}`)
-      .then((res) => res.json())
-      .then((data) => setBookings(data));
-  }, []);
 
   return (
     <li className="flex flex-col py-6 font-bold sm:flex-row sm:justify-between">
